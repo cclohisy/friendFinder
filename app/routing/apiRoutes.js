@@ -13,14 +13,26 @@ displayFriends = function(){
     console.log(friends)
 
 }
-displayFriends()
+//displayFriends()
 
 
 apiDisplay = function(app){
 
 app.get("/api/friends", function(req, res) {
     res.json(friends)
-  });
+  })
+
+app.post("/api/friends", function(req,res){
+    //console.log(req)
+    console.log(req.body)
+        //var newFriend = req.body;  
+        //console.log(newFriend);   
+        //send new user data to friends array
+        friends.push(req.body);   
+        //We then display the JSON?
+        res.json(req.body);
+    
+    });
 }
 
 

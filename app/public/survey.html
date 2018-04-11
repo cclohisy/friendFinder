@@ -26,11 +26,11 @@
                 <form>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Name (Required)</label>
-                        <input type="text" class="form-control" id="nameInput">
+                        <input type="text" class="form-control" id="userName">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Link to Photo (Required)</label>
-                        <input type="text" class="form-control" id="photoInput">
+                        <input type="text" class="form-control" id="userPhoto">
                     </div>
                     <hr class="my-4">
                     <div class="form-group">
@@ -38,9 +38,10 @@
                             <h4>Question One</h4>
                         </label>
                         <p>Some sort of question...</p>
-                        <select class="form-control oneq">
+                        <select class="form-control" id="oneQ">
                             <option value="1">1(Strongly Disagree)</option>
-                            <option value="2"></optionvalue>>2</option>
+                            <option value="2">
+                                </optionvalue>>2</option>
                             <option value="3"></option>>3</option>
                             <option value="4"></option>>4</option>
                             <option value="5">5(Strongly Agree)</option>
@@ -49,7 +50,7 @@
                             <h4>Question Two</h4>
                         </label>
                         <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="oneQ">
                             <option value="1">1(Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -144,7 +145,7 @@
                             <option>4</option>
                             <option>5(Strongly Agree)</option>
                         </select> -->
-                        <a href="#" id="submitSurvery" class="btn btn-warning col-md-12">Submit</a>
+                        <a href="#" id="submitSurvey" class="btn btn-warning col-md-12">Submit</a>
 
                 </form>
 
@@ -157,10 +158,36 @@
 
 
         <script>
-    
+            //script for new survey data post html
+            $("#submitSurvey").on("click", function (event) {
+                console.log("onclick working")
+                event.preventDefault();
+                //create var with data from user input,.. grab elemets
+                var newFriend = {
+                    name: $("#userName").val().trim(),
+                    photo: $("#userPhoto").val().trim(),
+                    scores: [
+                        $("#oneQ").val(),
+                        $("#twoQ").val(),
+                    ]
+                }
+                //log new friend obj in terminal
+                console.log(newFriend)
+                $.post("/api/friends", newFriend, function (data) {
+                    console.log(data)
+                    //add if statment to make sure all fields full
+                    //if (name ==!null && number ==!null)
+                    alert("data added!")
+                    //empty input values
+                    $("#userName").val("")
+                    $("#userPhoto").val("")
+
+                })
+            })
+
         </script>
 
-        
+
 
         <!-- bootstrap links-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
