@@ -25,11 +25,11 @@
                 <h4 class="card-title">Tell us about you...</h4>
                 <form>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Name (Required)</label>
+                        <label for="nameInput">Name (Required)</label>
                         <input type="text" class="form-control" id="userName">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Link to Photo (Required)</label>
+                        <label for="photoInput">Link to Photo (Required)</label>
                         <input type="text" class="form-control" id="userPhoto">
                     </div>
                     <hr class="my-4">
@@ -40,160 +40,89 @@
                         <p>Some sort of question...</p>
                         <select class="form-control" id="oneQ">
                             <option value="1">1(Strongly Disagree)</option>
-                            <option value="2">
-                                </optionvalue>>2</option>
-                            <option value="3"></option>>3</option>
-                            <option value="4"></option>>4</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
                         <label for="exampleFormControlSelect1">
                             <h4>Question Two</h4>
                         </label>
                         <p>Some sort of question...</p>
-                        <select class="form-control" id="oneQ">
+                        <select class="form-control" id="twoQ">
                             <option value="1">1(Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
-                        <!-- <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select>
-                        <label for="exampleFormControlSelect1">
-                            <h4>Question One</h4>
-                        </label>
-                        <p>Some sort of question...</p>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1(Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                        </select> -->
                         <a href="#" id="submitSurvey" class="btn btn-warning col-md-12">Submit</a>
-
+                    </div>
                 </form>
 
-
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your new friend is...</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="friendName">user match will go here</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
-            <a href='/api/friends'>Api Friend Finder Data</a>
-            <a href='https://github.com/cclohisy/friendFinder'>GitHub</a>
         </div>
+        <a href='/api/friends'>Api Friend Finder Data</a>
+        <a href='https://github.com/cclohisy/friendFinder'>GitHub</a>
+    </div>
 
 
-        <script>
-            //script for new survey data post html
-            $("#submitSurvey").on("click", function (event) {
-                console.log("onclick working")
-                event.preventDefault();
-                //create var with data from user input,.. grab elemets
-                var newFriend = {
-                    name: $("#userName").val().trim(),
-                    photo: $("#userPhoto").val().trim(),
-                    scores: [
-                        $("#oneQ").val(),
-                        $("#twoQ").val(),
-                    ]
-                }
-                //log new friend obj in terminal
-                console.log(newFriend)
-                $.post("/api/friends", newFriend, function (data) {
-                    console.log(data)
-                    //add if statment to make sure all fields full
-                    //if (name ==!null && number ==!null)
-                    alert("data added!")
-                    //empty input values
-                    $("#userName").val("")
-                    $("#userPhoto").val("")
+    <script>
+        //script for new survey data post html
+        $("#submitSurvey").on("click", function (event) {
+            console.log("onclick working")
+            event.preventDefault();
+            //create var with data from user input,.. grab elemets
+            var newFriend = {
+                name: $("#userName").val().trim(),
+                photo: $("#userPhoto").val().trim(),
+                scores: [
+                    $("#oneQ").val(),
+                    $("#twoQ").val(),
+                ]
+            }
+            //log new friend obj in terminal
+            console.log(newFriend)
+            $.post("/api/friends", newFriend, function (data) {
+                console.log(data)
+                //add if statment to make sure all fields full
+                //if (name not null && number not null){
+                alert("data added!")
+                //empty input values
+                $("#userName").val("")
+                $("#userPhoto").val("")
+                //return value to check in post? to see if push data or not? 
+                //}
+                //else{ alert("OOPS! looks like you left something blank! please try again")}
 
-                })
             })
+        })
 
-        </script>
+    </script>
 
-
-
-        <!-- bootstrap links-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+    <!-- bootstrap links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

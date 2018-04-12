@@ -7,18 +7,14 @@ var path = require("path");
 var app = express();
 
 // Sets up the Express app to handle data parsing
+//IT MATTERS WHERE THIS GOES! HAS TO BE BEFORE REQUIRING OTHER FILES THAT WILL USE EXPRESS
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 require("./app/routing/apiRoutes.js")(app)
 require("./app/routing/htmlRoutes.js")(app)
 
-
-
-
 var PORT = process.env.PORT || 3000;
-
-
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
