@@ -8,14 +8,6 @@ var app = express();
 
 var friends = require("../data/friends")
 
-//test if friends was exported correctly
-displayFriends = function () {
-    console.log(friends)
-
-}
-//displayFriends()
-
-
 apiDisplay = function (app) {
 
     //get and display json friends array of data objs
@@ -29,24 +21,13 @@ apiDisplay = function (app) {
         var sumArray = []
         console.log("new friend added")
         console.log(newFriend)
-        console.log("name " + newFriend.name)
-        console.log("scores " + newFriend.scores)
         console.log("____________________________________")
-        //send new user data to friends array
-        console.log("friends array data")
-        console.log(friends)
 
-        console.log("____________________________________")
-        // Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-        //loop through all friends[i].score[]...
         for (var i = 0; i <= friends.length - 1; i++) {
             var scoresArray = friends[i].scores
             var sum = 0
             //where do these go...
             var friendScores = []
-
-
-            console.log(i + " user score array: " + scoresArray)
 
             for (var j = 0; j < scoresArray.length; j++) {
 
@@ -55,24 +36,15 @@ apiDisplay = function (app) {
                 //push into array to hold values for comparison... 
                 friendScores.push(eachScore)
                 sum += Math.abs(friendScores[j] - newFriend.scores[j])
-                //console.log(j + " questionscore: " + sum)
 
             }
-            console.log(friendScores)
             sumArray.push(sum)
-            console.log("sum array " + sumArray)
         }
-        console.log("____________________________________")
-        //use math.min at some point??? and store index of math min item in array
         var matchSum = Math.min(...sumArray)
-        console.log("match sum value from array: " + matchSum)
         var matchIndex = sumArray.indexOf(matchSum)
-        console.log("matched friend index: " + matchIndex)
-        console.log("____________________________________")
 
-
-        
-        friends.push(req.body)
+        //send new user data to friends array
+        friends.push(newFriend)
         //else do nothing?- no else statement 
         //We then send the JSON?
         res.json(friends[matchIndex])
