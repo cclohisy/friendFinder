@@ -33,10 +33,10 @@
                     </div>
                     <hr class="my-4">
                     <div class="form-group">
-                        <label for="question1">
+                        <label>
                             <h4>Question One</h4>
                         </label>
-                        <p>Some sort of question...</p>
+                        <p>I love pizza.</p>
                         <select class="form-control" id="oneQ">
                             <option value="1">1(Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -44,10 +44,11 @@
                             <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
-                        <label class = "mt-3" for="exampleFormControlSelect1">
+                        <hr class="my-4">
+                        <label>
                             <h4>Question Two</h4>
                         </label>
-                        <p>Some sort of question...</p>
+                        <p>I binge watch TV reqularly <p>
                         <select class="form-control" id="twoQ">
                             <option value="1">1(Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -55,7 +56,103 @@
                             <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
-                        <a href="#" id="submitSurvey" class="btn btn-warning col-md-12 mt-4 text-white" data-toggle="modal" data-target="#resultModal">
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Three</h4>
+                        </label>
+                        <p>I love dogs <p>
+                        <select class="form-control" id="threeQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Four</h4>
+                        </label>
+                        <p>I hate cats <p>
+                        <select class="form-control" id="fourQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Five</h4>
+                        </label>
+                        <p>Birds are cool <p>
+                        <select class="form-control" id="fiveQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Six</h4>
+                        </label>
+                        <p>Spending time outside is neat <p>
+                        <select class="form-control" id="sixQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Seven</h4>
+                        </label>
+                        <p>Water is the best <p>
+                        <select class="form-control" id="sevenQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Eight</h4>
+                        </label>
+                        <p>Bourbon can be good too.  <p>
+                        <select class="form-control" id="eightQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Nine</h4>
+                        </label>
+                        <p>I could not live without cheese <p>
+                        <select class="form-control" id="nineQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <hr class="my-4">
+                        <label>
+                            <h4>Question Ten</h4>
+                        </label>
+                        <p>Bad drivers are the worst <p>
+                        <select class="form-control" id="tenQ">
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
+                        </select>
+                        <a href="#" id="submitSurvey" class="btn btn-warning col-md-12 mt-4 text-white" data-toggle="modal" >
                             Submit</a>
                     </div>
                 </form>
@@ -75,9 +172,8 @@
                     </div>
                     <!-- modal content -->
                     <div class="modal-body">
-                        <p id="friendName">user match will go here</p>
-                        <img id="friendPic" class="img-fluid" src="https://az616578.vo.msecnd.net/files/2016/03/23/635943023190545571-320989379_fb2afbfe-6289-40d7-802e-42fd2a8eabce.jpg"
-                        />
+                        <h3 id="friendName"></h3>
+                        <img id="friendPic" class="img-fluid" src="" />
                     </div>
                     <!-- footer -->
                     <div class="modal-footer">
@@ -102,18 +198,28 @@
                 scores: [
                     $("#oneQ").val(),
                     $("#twoQ").val(),
+                    $("#threeQ").val(),
+                    $("#fourQ").val(),
+                    $("#fiveQ").val(),
+                    $("#sixQ").val(),
+                    $("#sevenQ").val(),
+                    $("#eightQ").val(),
+                    $("#nineQ").val(),
+                    $("#tenQ").val(),
+
                 ]
 
             }
+            console.log(newFriend)
             if (newFriend.name === "" || newFriend.photo === "") {
                 alert("OOPS! Looks like you forgot something... Please fill out all fields")
             }
 
             else {
+                $("#resultModal").modal("toggle")
+
                 //add if statment to make sure all fields full
                 $.post("/api/friends", newFriend, function (matchData) {
-                    console.log("over here")
-                    console.log(matchData)
                     var matchName = matchData.name
                     var matchPic = matchData.photo
                     $("#friendName").text(matchName)

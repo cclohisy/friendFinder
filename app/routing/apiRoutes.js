@@ -55,11 +55,12 @@ apiDisplay = function (app) {
                 //push into array to hold values for comparison... 
                 friendScores.push(eachScore)
                 sum += Math.abs(friendScores[j] - newFriend.scores[j])
-                console.log(j + " questionscore: " + sum)
+                //console.log(j + " questionscore: " + sum)
 
             }
+            console.log(friendScores)
             sumArray.push(sum)
-            console.log("sum array" + sumArray)
+            console.log("sum array " + sumArray)
         }
         console.log("____________________________________")
         //use math.min at some point??? and store index of math min item in array
