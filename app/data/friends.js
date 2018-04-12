@@ -7,7 +7,7 @@ var friends = [
     ,
     {
         name: "Tom",
-        photo: "https://twitter.com/myspacetom",
+        photo: "https://akns-images.eonline.com/eol_images/Entire_Site/2018024/rs_600x600-180124163953-600-tom-myspace.jpg?fit=around|700:700&crop=700:700;center,top&output-quality=100",
         scores: [1, 3]
     },
     {

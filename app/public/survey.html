@@ -12,15 +12,14 @@
     <!-- link to jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- link to javascript file -->
-    <script type="text/javascript" src="/app/data/friends.js"></script>
+
 </head>
 
 <body>
 
     <div class="container">
-        <div class="card">
-            <h2 class="card-header">Survey Time</h2>
+        <div class="card border-warning ">
+            <h2 class="card-header text-warning">Survey Time</h2>
             <div class="card-body">
                 <h4 class="card-title">Tell us about you...</h4>
                 <form>
@@ -45,7 +44,7 @@
                             <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
-                        <label for="exampleFormControlSelect1">
+                        <label class = "mt-3" for="exampleFormControlSelect1">
                             <h4>Question Two</h4>
                         </label>
                         <p>Some sort of question...</p>
@@ -56,14 +55,17 @@
                             <option value="4">4</option>
                             <option value="5">5(Strongly Agree)</option>
                         </select>
-                        <a href="#" id="submitSurvey" class="btn btn-warning col-md-12">Submit</a>
+                        <a href="#" id="submitSurvey" class="btn btn-warning col-md-12 mt-4 text-white" data-toggle="modal" data-target="#resultModal">
+                            Submit</a>
                     </div>
                 </form>
 
             </div>
         </div>
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+        <!-- modal stuff -->
+        <div class="modal" id="resultModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <!-- modal header -->
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Your new friend is...</h5>
@@ -71,9 +73,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <!-- modal content -->
                     <div class="modal-body">
                         <p id="friendName">user match will go here</p>
+                        <img id="friendPic" class="img-fluid" src="https://az616578.vo.msecnd.net/files/2016/03/23/635943023190545571-320989379_fb2afbfe-6289-40d7-802e-42fd2a8eabce.jpg"
+                        />
                     </div>
+                    <!-- footer -->
                     <div class="modal-footer">
                         <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
@@ -88,7 +94,6 @@
     <script>
         //script for new survey data post html
         $("#submitSurvey").on("click", function (event) {
-            console.log("onclick working")
             event.preventDefault();
             //create var with data from user input,.. grab elemets
             var newFriend = {
@@ -98,23 +103,32 @@
                     $("#oneQ").val(),
                     $("#twoQ").val(),
                 ]
+
             }
-            //log new friend obj in terminal
-            console.log(newFriend)
-            $.post("/api/friends", newFriend, function (data) {
-                console.log(data)
+            if (newFriend.name === "" || newFriend.photo === "") {
+                alert("OOPS! Looks like you forgot something... Please fill out all fields")
+            }
+
+            else {
                 //add if statment to make sure all fields full
-                //if (name not null && number not null){
-                alert("data added!")
-                //empty input values
+                $.post("/api/friends", newFriend, function (matchData) {
+                    console.log("over here")
+                    console.log(matchData)
+                    var matchName = matchData.name
+                    var matchPic = matchData.photo
+                    $("#friendName").text(matchName)
+                    $("#friendPic").attr("src", matchPic)
+
+                })
+
                 $("#userName").val("")
                 $("#userPhoto").val("")
-                //return value to check in post? to see if push data or not? 
-                //}
-                //else{ alert("OOPS! looks like you left something blank! please try again")}
 
-            })
+
+            }
+
         })
+
 
     </script>
 

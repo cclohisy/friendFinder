@@ -32,8 +32,6 @@ apiDisplay = function (app) {
         console.log("name " + newFriend.name)
         console.log("scores " + newFriend.scores)
         console.log("____________________________________")
-        //if statement to either push data... fields not null... or do nothing?
-        // if(req.body.name not null && req.body.photo not null){}
         //send new user data to friends array
         console.log("friends array data")
         console.log(friends)
@@ -69,12 +67,14 @@ apiDisplay = function (app) {
         console.log("match sum value from array: " + matchSum)
         var matchIndex = sumArray.indexOf(matchSum)
         console.log("matched friend index: " + matchIndex)
+        console.log("____________________________________")
 
 
+        
         friends.push(req.body)
         //else do nothing?- no else statement 
-        //We then display the JSON?
-        //res.json(req.body)
+        //We then send the JSON?
+        res.json(friends[matchIndex])
 
     });
 }
